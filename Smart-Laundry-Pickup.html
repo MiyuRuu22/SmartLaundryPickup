@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="en-LK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Explore Smart Laundry Pickup, a Colombo doorstep laundry app for booking pickups, comparing wash-and-fold packages and tracking orders.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#2539da">
+<title>Smart Laundry Pickup | Colombo Doorstep Laundry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#2539da;--deep:#1828b1;--ink:#181c35;--mute:#555a73;--paper:#f8f8ff;--wash:#eef0ff;--white:#fff;--line:#dfe2f1;--lime:#e9fc78;--good:#176145;--bad:#a12537;--display:"Space Grotesk",Arial,sans-serif;--body:"DM Sans",system-ui,sans-serif;--section:88px;--gap:20px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;color:var(--ink);background:var(--paper);font:16px/1.55 var(--body)}body.compact{--section:56px;--gap:14px}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button,select,summary{cursor:pointer}button{color:inherit}button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #5866fd;outline-offset:3px}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:var(--display);line-height:1.04;letter-spacing:-.045em}h1{font-size:clamp(48px,6.2vw,90px)}h2{font-size:clamp(34px,4.5vw,59px)}h3{font-size:clamp(23px,2.6vw,32px)}p{color:var(--mute)}svg{display:block}small{font-size:.85rem}[hidden]{display:none!important}.skip{position:absolute;top:-100px;left:10px;z-index:20;background:white;padding:12px}.skip:focus{top:8px}.shell{width:min(calc(100% - 20px),1260px);margin-inline:auto}.section{padding-block:var(--section)}.kicker{display:flex;align-items:center;gap:8px;color:var(--deep);font-size:.78rem;font-weight:700;letter-spacing:.085em;text-transform:uppercase}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:currentColor;flex:none}.lead{font-size:clamp(17px,2vw,20px);max-width:43ch}.stack{display:grid;gap:var(--gap)}.row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.between{justify-content:space-between}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:10px 18px;border:1px solid transparent;border-radius:10px;background:var(--blue);color:white;font-weight:700;white-space:normal;text-align:center;transition:background .18s,transform .18s}.btn:hover{background:var(--deep);transform:translateY(-1px)}.btn.alt{background:white;border-color:var(--line);color:var(--ink)}.btn.alt:hover{background:var(--wash)}.btn.lime{background:var(--lime);color:var(--ink)}.btn.lime:hover{background:#d9f04a}.btn.small{min-height:38px;padding:6px 12px;font-size:.87rem}.btn:disabled{opacity:.55;cursor:default;transform:none}.textbtn{background:none;border:0;padding:4px 0;color:var(--deep);font-weight:700;text-decoration:underline;text-underline-offset:3px}.panel{background:#fff;border:1px solid var(--line);border-radius:20px;padding:clamp(14px,3vw,30px)}.pill{display:inline-flex;align-items:center;gap:6px;background:var(--wash);color:var(--deep);font-size:.8rem;font-weight:700;padding:5px 9px;border-radius:999px}.pill.good{background:#e1f7ed;color:var(--good)}.pill.bad{background:#ffe9e9;color:var(--bad)}.notice{border:1px solid #d2d7ff;background:var(--wash);border-radius:10px;padding:10px 13px;font-size:.9rem;color:#343d75}.muted{color:var(--mute)}.price{font:700 clamp(25px,3.7vw,43px)/1 var(--display);letter-spacing:-.05em;color:var(--ink)}
+.top{position:sticky;top:0;z-index:8;background:#f8f8fff5;border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}.header{min-height:69px;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{display:inline-flex;align-items:center;gap:9px;font:700 20px/.95 var(--display);letter-spacing:-.055em;text-align:left}.brandmark{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:var(--blue);color:white;flex:none}.brandmark svg{width:24px;height:24px}.brand small{display:block;font:700 9px/1.5 var(--body);letter-spacing:.13em;color:var(--deep);text-transform:uppercase}.nav{display:flex;align-items:center;gap:24px;font-size:.9rem;font-weight:700}.nav a:hover,.foot a:hover{color:var(--blue);text-decoration:underline;text-underline-offset:4px}.mobile-only{display:none}.hero{padding-top:28px}.hero-grid{display:grid;grid-template-columns:1fr .98fr;gap:24px;align-items:stretch}.hero-copy{padding:clamp(16px,3.5vw,54px) 0;display:grid;align-content:center;justify-items:start;gap:22px}.hero h1 em{color:var(--blue);font-style:normal}.hero-art{isolation:isolate;position:relative;min-height:455px;overflow:hidden;border-radius:26px;background:#273bdd;color:white;display:grid;place-items:center}.hero-art:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 55% 46%,#626dff 0%,#3247eb 47%,#2436ce 76%);z-index:-2}.hero-art:after{content:"";position:absolute;inset:0;background-image:radial-gradient(#d9ddff55 1px,transparent 1px);background-size:25px 25px;mask-image:linear-gradient(150deg,#000,transparent 75%);z-index:-1}.machine{width:min(93%,535px);height:auto;margin:0 0 16px}.photo-tag{position:absolute;bottom:17px;left:17px;right:17px;display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:.76rem;font-weight:700;color:#fff}.photo-tag span:first-child{background:#172694;padding:7px 10px;border:1px solid #777fff;border-radius:7px}.photo-tag span:last-child{color:var(--lime);letter-spacing:.04em}.quick{margin-top:20px;background:white;border:1px solid var(--line);border-radius:16px;padding:14px 18px;display:grid;grid-template-columns:1fr 1fr auto;align-items:center;gap:var(--gap)}.quick h2{font-size:23px}.quick label{margin:0}.quick .btn{align-self:end;margin-bottom:1px}
+.section-head{display:grid;gap:12px;margin-bottom:24px}.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}.plan{display:grid;gap:16px;padding:22px;position:relative;transform:translateY(0);transition:transform .2s}.plan:hover{transform:translateY(-3px)}.plan.featured{background:var(--blue);border-color:var(--blue);color:#fff}.plan.featured :is(.price,p,.muted){color:#fff}.plan .pill{justify-self:start}.plan ul{padding-left:20px;margin:0}.plan .btn{justify-self:start;align-self:end}.process{background:var(--wash);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0 var(--gap)}.process-grid article{padding:20px 5px;border-top:1px solid #cbd1f1;display:grid;grid-template-columns:48px 1fr;gap:12px;align-items:start}.process-grid h3{font-size:20px;margin-bottom:5px}.process-grid p{font-size:.93rem}.icon{width:44px;height:44px;color:var(--blue);background:white;padding:9px;border-radius:12px;stroke:currentColor;fill:none;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}.split{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);align-items:start}.coverage{background:var(--blue);color:white;border:none;min-height:100%;display:grid;gap:17px;align-content:start}.coverage p,.coverage .kicker{color:#f0f1ff}.coverage h2{font-size:clamp(32px,4vw,50px)}details.faq{border-bottom:1px solid var(--line);padding:12px 0}details.faq summary{font-weight:700}details.faq p{margin-top:8px}.foot{border-top:1px solid var(--line);padding:25px 0 34px}.foot .row{gap:17px}.foot a,.foot button{font-size:.93rem}.settings{position:fixed;bottom:14px;right:15px;z-index:9}.settings summary{list-style:none;background:var(--ink);color:white;border-radius:100px;padding:9px 14px;font-size:.82rem;font-weight:700;box-shadow:0 4px 18px #181c3528;width:max-content;margin-left:auto}.settings summary::-webkit-details-marker{display:none}.settings .panel{width:min(260px,calc(100vw - 22px));margin-bottom:8px;box-shadow:0 8px 30px #181c352b;position:absolute;bottom:100%;right:0;padding:15px}.settings label{display:flex;align-items:center;gap:8px;font-weight:600}.settings input{width:auto;min-height:auto}.sticky-actions{display:none}
+.app{padding-block:38px 65px;min-height:70vh}.app-heading{margin-bottom:22px;display:grid;gap:10px}.app h1{font-size:clamp(36px,5.5vw,66px)}.app h2{font-size:clamp(24px,3vw,35px)}.app h3{font-size:22px}.book-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:var(--gap);align-items:start}.receipt{position:sticky;top:89px}.steps{display:flex;gap:10px;flex-wrap:wrap;padding:0;list-style:none;margin:0 0 15px}.steps li{background:var(--wash);border-radius:999px;padding:6px 11px;font-weight:700;font-size:.85rem;color:var(--mute)}.steps [aria-current=step]{background:var(--blue);color:#fff}.fieldsets{display:grid;gap:17px}.fieldsets fieldset{min-width:0;margin:0;padding:0;border:none}.fieldsets legend{font:700 26px/1.1 var(--display);letter-spacing:-.03em;margin-bottom:15px}.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.full{grid-column:1/-1}label{display:grid;gap:5px;font-weight:700;font-size:.91rem}input,select,textarea{border:1px solid #bfc5e1;background:white;color:var(--ink);border-radius:8px;padding:9px 10px;min-height:45px;width:100%}textarea{resize:vertical}.choices{display:grid;gap:9px}.choice{position:relative;display:flex;align-items:center;gap:10px;padding:10px;border:1px solid var(--line);border-radius:10px;background:#fff;width:100%;text-align:left}.choice:has(input:checked){border-color:var(--blue);background:var(--wash)}.choice input{width:18px;min-height:auto;flex:none;accent-color:var(--blue)}.choice span{display:grid}.choice small{font-weight:500;color:var(--mute)}.actions{display:flex;justify-content:space-between;gap:10px;border-top:1px solid var(--line);padding-top:14px}.receipt dl,.kv{display:grid;gap:10px;margin:0}.receipt dl div,.kv div{display:flex;justify-content:space-between;gap:10px}.receipt dd,.kv dd{margin:0;font-weight:700;text-align:right;overflow-wrap:anywhere}.receipt .total{border-top:1px dashed #bfc5e1;padding-top:13px}.feedback{font-size:.9rem;color:var(--bad)}.narrow{max-width:800px}.timeline{list-style:none;margin:0;padding:0}.timeline li{position:relative;padding:0 0 16px 24px;color:var(--mute);border-left:2px solid var(--line);margin-left:7px}.timeline li:before{content:"";position:absolute;top:3px;left:-7px;width:11px;height:11px;background:white;border:2px solid #cbd0e7;border-radius:50%}.timeline li.done:before{background:var(--blue);border-color:var(--blue)}.timeline li[aria-current]{font-weight:700;color:var(--deep)}.timeline li:last-child{border-color:transparent;padding-bottom:0}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.tabs button[aria-pressed=true]{background:var(--blue);color:#fff}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap)}.metric{padding:15px}.metric strong{display:block;font:700 clamp(23px,3vw,34px)/1.2 var(--display);color:var(--blue);overflow-wrap:anywhere}.table-wrap{width:100%;overflow-x:auto}.table-wrap:focus-visible{outline:2px solid var(--blue)}table{width:100%;border-collapse:collapse;text-align:left;font-size:.9rem}th,td{padding:10px;border-bottom:1px solid var(--line);vertical-align:middle}th{color:var(--mute);background:var(--wash)}td:first-child{font-weight:700}td .btn{white-space:nowrap}dialog{width:min(670px,calc(100% - 20px));max-height:90dvh;border:1px solid var(--line);padding:22px;border-radius:16px;color:var(--ink);background:var(--paper);box-shadow:0 20px 90px #181c3555}dialog::backdrop{background:#12163096}.close{margin-left:auto}.print-label{border:1px dashed var(--ink);background:#fff;padding:16px;overflow-wrap:anywhere}.toast{position:fixed;bottom:17px;left:15px;z-index:11;background:var(--ink);color:white;padding:10px 15px;border-radius:8px;max-width:calc(100vw - 30px);box-shadow:0 8px 28px #181c3544}.bars{display:grid;gap:12px}.bar{height:10px;border-radius:99px;background:var(--wash);overflow:hidden}.bar span{display:block;height:100%;background:var(--blue);border-radius:99px}.menu{position:absolute;right:10px;top:62px;min-width:175px;box-shadow:0 8px 25px #181c3530;z-index:9}.menu a{display:block;padding:8px}.sample{font-size:.86rem}
+@media(max-width:930px){:root{--section:62px}.nav{gap:12px}.hero-art{min-height:385px}.hero-copy{gap:16px}.metrics{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){:root{--section:43px;--gap:14px}body.compact{--section:30px}.nav,.desk-only{display:none}.mobile-only{display:inline-flex}.header{min-height:59px}.hero{padding-top:12px}.hero-grid{grid-template-columns:1fr}.hero-copy{padding:18px 3px 0}.hero h1{font-size:clamp(45px,10vw,67px)}.hero-art{min-height:310px;max-height:420px}.machine{width:min(86%,390px)}.quick{grid-template-columns:1fr auto;padding:12px}.quick div:first-child{grid-column:1/-1}.plan-grid,.book-grid,.split{grid-template-columns:1fr}.process-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.process-grid article{display:grid;grid-template-columns:1fr;gap:7px}.process-grid h3{font-size:17px}.process-grid p{font-size:.84rem}.receipt{position:static}.app{padding-block:24px 35px}.sticky-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;bottom:0;left:0;right:0;padding:8px 10px calc(8px + env(safe-area-inset-bottom));z-index:8;background:#f8f8ff;border-top:1px solid var(--line)}body:has(.sticky-actions:not([hidden])){padding-bottom:73px}.settings{bottom:72px;right:10px}.toast{bottom:77px}.foot{padding-bottom:50px}}
+@media(max-width:390px){.fields{grid-template-columns:1fr}.quick{grid-template-columns:1fr}.quick div:first-child{grid-column:auto}.process-grid article{padding-inline:0}.process-grid p{font-size:.79rem}.hero-art{min-height:260px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}body.still *{scroll-behavior:auto!important;animation:none!important;transition:none!important}html:has(body.still){scroll-behavior:auto}
+@media print{body>*:not(#orderDialog){display:none!important}#orderDialog[open]{position:static;width:100%;max-height:none;border:0;box-shadow:none}#orderDialog[open]>*:not(#dialogContent),#dialogContent>*:not(.print-label){display:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+ <div class="shell header">
+  <a class="brand" href="#home" aria-label="Smart Laundry Pickup home"><span class="brandmark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM5 8h14M8 6h1m2 0h1" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="14" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8.5 14c2.5-2 4 2 7 0" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span><span>Smart Laundry<small>Pickup</small></span></a>
+  <nav class="nav" aria-label="Main navigation"><a href="#packages">Packages</a><a href="#process">How it works</a><a href="#coverage">Service area</a><a href="#track">Track order</a></nav>
+  <div class="row"><a class="btn small desk-only" href="#book">Book a pickup <span aria-hidden="true">↗</span></a><button id="menuButton" class="btn alt small mobile-only" aria-expanded="false" aria-controls="mobileMenu">Menu</button></div>
+  <nav id="mobileMenu" class="panel menu" aria-label="Mobile navigation" hidden><a href="#packages">Packages</a><a href="#process">How it works</a><a href="#coverage">Service area</a><a href="#history">My orders</a><a href="#staff">Staff workspace</a></nav>
+ </div>
+</header>
+<main id="main" tabindex="-1">
+ <div id="homeView">
+  <section class="shell hero" aria-labelledby="heroTitle">
+   <div class="hero-grid">
+    <div class="hero-copy">
+     <div class="kicker"><span class="dot"></span> Doorstep laundry · Colombo</div>
+     <h1 id="heroTitle">Laundry day,<br><em>handled.</em></h1>
+     <p class="lead">Pick a time. We collect your laundry, wash, dry and fold it, then bring it back to your door.</p>
+     <div class="row"><a class="btn" href="#book">Book a pickup <span aria-hidden="true">↗</span></a><a class="btn alt" href="#track">Track an order</a></div>
+     <p class="sample">Pilot demo · Regular orders target 24–48 hours.</p>
+    </div>
+    <div class="hero-art">
+     <svg class="machine" viewBox="0 0 530 424" role="img" aria-label="Illustration of a washer with folded laundry and a collection bag">
+      <defs>
+       <linearGradient id="bodyPaint" x2="1" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#fff"/><stop offset="1" stop-color="#c8ceff"/></linearGradient>
+       <linearGradient id="sidePaint" x2="1" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#8292ff"/><stop offset="1" stop-color="#4a5be4"/></linearGradient>
+       <radialGradient id="glassPaint" cx=".37" cy=".32" r=".7"><stop stop-color="#6376ff"/><stop offset="1" stop-color="#15247f"/></radialGradient>
+       <linearGradient id="bagPaint" x2=".9" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#f6ffa8"/><stop offset="1" stop-color="#c4dc49"/></linearGradient>
+       <clipPath id="porthole"><circle cx="251" cy="239" r="75"/></clipPath>
+      </defs>
+      <ellipse cx="282" cy="367" rx="221" ry="27" fill="#1d2daa"/>
+      <path d="M25 275C92 181 177 147 305 146c104 0 185 29 194 60 14 46-103 113-220 126-115 13-237-13-242-48" fill="none" stroke="#aebaff" stroke-opacity=".58" stroke-width="1.5" stroke-dasharray="4 7"/>
+      <path d="M409 86v36m-18-18h36m-31-13 26 26m0-26-26 26M82 147v23m-12-12h24M461 150v19m-9-9h18" stroke="#e9fc78" stroke-width="2" stroke-linecap="round"/>
+      <path d="M158 117l43-24h165c18 0 31 8 31 25v206c0 13-6 24-19 30l-42 18z" fill="url(#sidePaint)" stroke="#a5b0ff" stroke-width="2"/>
+      <path d="M157 119l43-26h166c15 0 24 5 29 15l-51 27z" fill="#eef0ff"/>
+      <rect x="137" y="118" width="229" height="251" rx="24" fill="url(#bodyPaint)" stroke="#f3f5ff" stroke-width="2"/>
+      <path d="M138 169h227" stroke="#aab3f1" stroke-width="2"/>
+      <rect x="155" y="135" width="71" height="17" rx="4" fill="#bbc5ef"/><path d="M162 142h54" stroke="#8b99d5" stroke-width="2"/>
+      <circle cx="333" cy="143" r="12" fill="#293baf"/><path d="M332 135v7" stroke="#e9fc78" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="251" cy="242" r="91" fill="#99a6ed"/><circle cx="251" cy="239" r="84" fill="#f7f8ff"/><circle cx="251" cy="239" r="75" fill="url(#glassPaint)"/>
+      <g clip-path="url(#porthole)">
+       <path d="M173 255c32-3 59-46 91-31 24 11 46 16 65 9v89H171z" fill="#7d8cff"/>
+       <path d="M166 267c32 11 47-9 69-16 24-8 37 7 64 8 16 0 30-5 37-12v78H166z" fill="#afbaff"/>
+       <path d="M167 292c35-13 47 7 86 7 34 0 50-19 79-16v52H167z" fill="#e9fc78"/>
+       <path d="M178 212c24-40 66-70 117-38" fill="none" stroke="#edf2ff" stroke-width="7" opacity=".53" stroke-linecap="round"/>
+       <circle cx="220" cy="212" r="7" fill="#c5d0ff"/><circle cx="286" cy="211" r="4" fill="#c5d0ff"/>
+      </g>
+      <path d="M151 340h197" stroke="#aab3f1"/><path d="M163 352h22m6 0h13" stroke="#8998d8" stroke-width="2" stroke-linecap="round"/>
+      <g transform="translate(152 66) rotate(-4 87 19)"><rect x="5" y="20" width="171" height="23" rx="10" fill="#b5c6ff"/><path d="M18 28h111" stroke="#e3eaff" stroke-width="2" stroke-linecap="round"/><rect x="19" y="0" width="158" height="24" rx="10" fill="#ecfb7a"/><path d="M28 9h104" stroke="#c0d54a" stroke-width="2" stroke-linecap="round"/></g>
+      <path d="M411 267c-7-34-39-37-43-5m80 9c4-35-22-41-29-7" stroke="#efff9d" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <path d="M357 263l109 8 11 91c1 8-5 13-12 13l-105-2c-9 0-14-6-13-15z" fill="url(#bagPaint)" stroke="#f0ffa3" stroke-width="2"/>
+      <path d="M447 270l19 1 11 91c1 8-5 13-12 13l-18-2z" fill="#c0d748"/>
+      <path d="M386 319c9-9 18-9 28-2 10 7 19 7 28-2m-56 16c9-9 18-9 28-2 10 7 19 7 28-2" fill="none" stroke="#313e26" stroke-width="3" stroke-linecap="round"/>
+      <path d="M51 315l27-16 39 9-27 17z" fill="#f4fb9b"/><path d="M51 315v20l39 10v-20z" fill="#d0e454"/><path d="M90 325l27-17v20l-27 17z" fill="#adca3c"/>
+     </svg>
+     <div class="photo-tag"><span>Pickup → Wash &amp; fold → Delivery</span><span>Colombo pilot</span></div>
+    </div>
+   </div>
+   <form class="quick" id="quickForm">
+    <div><h2>Find your laundry pack</h2><p>Choose by load size and turnaround.</p></div>
+    <label for="quickPack">Laundry pack<select id="quickPack"><option value="student">Student · up to 5 kg</option><option value="standard" selected>Standard · up to 6 kg</option><option value="family">Family Premium · up to 10 kg</option></select></label>
+    <button type="submit" class="btn">Continue to booking <span aria-hidden="true">→</span></button>
+   </form>
+  </section>
+  <section id="packages" class="shell section" aria-labelledby="packagesTitle">
+   <div class="section-head"><div class="kicker">Packages</div><h2 id="packagesTitle">A pack for every load.</h2><p>Every pack includes doorstep pickup and return delivery in the proposed service area.</p></div>
+   <div class="plan-grid" id="packageCards"></div>
+   <p style="margin-top:16px">Add ironing from LKR 80 per item. Dry cleaning is quoted per garment.</p>
+  </section>
+  <section id="process" class="process section" aria-labelledby="processTitle">
+   <div class="shell"><div class="section-head"><div class="kicker">From your door and back</div><h2 id="processTitle">How it works</h2></div>
+    <div class="process-grid">
+     <article><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18m-13 5 2 2 5-4"/></svg><div><h3>Book online</h3><p>Choose a pack, date and pickup window.</p></div></article>
+     <article><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14l2 14H3L5 7zm4 2V6a3 3 0 0 1 6 0v3m-5 6h4"/></svg><div><h3>Hand over your bag</h3><p>We collect, weigh and label it with an order ID.</p></div></article>
+     <article><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 7h16m-12-2h1"/><circle cx="12" cy="14" r="4"/><path d="M8 14c3-2 5 2 8 0"/></svg><div><h3>Wash and dry</h3><p>We sort by fabric, colour and care needs.</p></div></article>
+     <article><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h13a3 3 0 1 0 0-6H6a3 3 0 1 0 0 6m-2 6h14a3 3 0 0 0 0-6h-1M4 21h14a3 3 0 0 0 0-6H4m3-9h8m-8 6h8m-8 6h8"/></svg><div><h3>Fold or iron</h3><p>Garments are finished according to your pack and add-ons.</p></div></article>
+     <article><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 4-4 7-7 9-3-2-7-5-7-9V6l7-3zm-3 9 2 2 4-4"/></svg><div><h3>Check and pack</h3><p>We check the order before packing it for return.</p></div></article>
+     <article><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h12v12H3zM15 9h4l3 4v4h-7"/><circle cx="7" cy="18" r="2" fill="white"/><circle cx="18" cy="18" r="2" fill="white"/></svg><div><h3>Deliver to your door</h3><p>Track the return and check your payment status online.</p></div></article>
+    </div>
+   </div>
+  </section>
+  <section id="coverage" class="shell section split" aria-labelledby="coverageTitle">
+   <div class="panel coverage"><div class="kicker"><span class="dot"></span> Service area</div><h2 id="coverageTitle">Starting in Colombo.</h2><p>The pilot is planned for Colombo and selected nearby suburbs. Choose a demo zone to try the booking flow.</p><div class="row"><a class="btn lime" href="#book">Select a pickup zone</a><a class="btn alt" href="#support">Ask about coverage</a></div></div>
+   <div class="panel"><h3>Good to know before booking</h3>
+    <details class="faq"><summary>How long does laundry take?</summary><p>Regular orders target 24–48 hours. Family Premium includes priority processing.</p></details>
+    <details class="faq"><summary>Can I add ironing or dry cleaning?</summary><p>Yes. Add ironing when you book. Dry cleaning requests are reviewed and quoted per item.</p></details>
+    <details class="faq"><summary>How do payments and tracking work?</summary><p>Choose cash on delivery or try the online payment simulation. Keep your order ID to follow its progress.</p></details>
+    <details class="faq"><summary>How do I report an issue with my order?</summary><p>Open your order and submit a support request using its order ID. Include the garment and the issue so the team can review it.</p></details>
+   </div>
+  </section>
+ </div>
+ <section class="shell app" id="appView" hidden></section>
+</main>
+<footer class="foot"><div class="shell row between"><div><a class="brand" href="#home">Smart Laundry Pickup</a><p>Clean Clothes. Easy Life.</p></div><nav class="row" aria-label="Footer navigation"><a href="#history">My orders</a><a href="#support">Support &amp; enquiries</a><a href="#staff">Staff workspace</a></nav></div></footer>
+<div class="sticky-actions" id="mobileActions"><a class="btn" href="#book">Book pickup</a><a class="btn alt" href="#track">Track order</a></div>
+<details class="settings"><summary>Display settings</summary><div class="panel stack"><label><input type="checkbox" id="compact"> Compact spacing</label><label><input type="checkbox" id="still"> Reduce motion</label></div></details>
+<dialog id="orderDialog" aria-labelledby="dialogTitle"><div class="row between" style="margin-bottom:14px"><h2 id="dialogTitle" style="font-size:27px">Order details</h2><button type="button" class="btn alt small close" data-action="close-dialog">Close</button></div><div id="dialogContent" class="stack"></div></dialog>
+<div class="toast" id="toast" role="status" hidden></div>
+<script>
+"use strict";
+const packs = {
+  student: {name:"Student Pack", kg:5, price:1500, copy:"For a week’s laundry in a boarding room or student flat.", detail:"Regular turnaround"},
+  standard: {name:"Standard Pack", kg:6, price:2250, copy:"For everyday clothes and a regular laundry routine.", detail:"Scheduled pickup and delivery"},
+  family: {name:"Family Premium Pack", kg:10, price:3500, copy:"For bigger household loads and a faster place in the queue.", detail:"Priority processing"}
+};
+const phases = ["Booked","Pickup scheduled","Collected & labelled","Washing & drying","Folding & ironing","Quality checked & packed","Out for delivery","Delivered"];
+const windows = ["08:00–11:00","11:00–14:00","14:00–17:00"];
+const zones = ["Colombo","Nearby suburb · coverage review"];
+const channels = ["SMS","WhatsApp"];
+const topics = ["Service area","Order help","Garment damage or loss","Dry cleaning quote","Business laundry","Recurring laundry interest"];
+const storeKey = "smart-laundry-pickup-demo-v1";
+const $ = (selector, scope=document) => scope.querySelector(selector);
+const app = $("#appView");
+const dialog = $("#orderDialog");
+const dateFormat = new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Colombo",year:"numeric",month:"2-digit",day:"2-digit"});
+const displayDate = new Intl.DateTimeFormat("en-LK",{day:"numeric",month:"short",year:"numeric",timeZone:"Asia/Colombo"});
+const money = (amount) => "LKR " + Number(amount).toLocaleString("en-LK");
+const clean = (value="") => String(value ?? "").replace(/[&<>"']/g, character => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[character]));
+const today = () => dateFormat.format(new Date());
+const isoDay = (offset) => dateFormat.format(new Date(Date.now()+offset*86400000));
+const niceDate = (date) => date ? displayDate.format(new Date(date+"T00:00:00+05:30")) : "—";
+const packFor = order => packs[order.pack];
+const phaseFor = order => order.cancelled ? "Cancelled" : phases[order.phase];
+const labelFor = order => order.id;
+const paymentLabel = order => order.paid ? "Paid (demo)" : order.payment === "online" ? "Awaiting demo payment" : "Cash on delivery";
+const normalId = (id) => id.trim().toUpperCase();
+const currencyTotal = order => packFor(order).price + order.iron * 80 + (order.quote ?? 0);
+const findOrder = id => state.orders.find(order => order.id === normalId(id));
+const orderItems = order => state.tickets.filter(ticket => ticket.orderId === order.id && ticket.type === "Dry cleaning quote");
+const dateTime = value => new Date(value).toLocaleString("en-LK",{timeZone:"Asia/Colombo",month:"short",day:"numeric",hour:"numeric",minute:"2-digit"});
+function code(prefix){
+  const bytes = crypto.getRandomValues(new Uint8Array(5));
+  return prefix+"-"+[...bytes].map(value=>value.toString(16).padStart(2,"0")).join("").toUpperCase();
+}
+function createExample(id, pack, name, phone, phase, date, slot, paid=false){
+  const created = new Date().toISOString();
+  return {id,pack,name,phone,phase,date,slot,paid,created,address:"Sample address · Colombo",zone:zones[0],iron:0,
+    payment:"cash",channel:"SMS",notes:"",mine:false,weight:phase>=2?3.7:0,assigned:phase>0?"Demo driver":"",
+    checked:phase>=5,events:phases.slice(0,phase+1).map((_, step)=>({step,at:created}))};
+}
+function seed(){
+  return {orders:[
+    createExample("SLP-DEMO24","standard","Sample customer A","0770000001",3,isoDay(-1),windows[0]),
+    createExample("SLP-DEMO31","student","Sample customer B","0770000002",1,today(),windows[1]),
+    createExample("SLP-DEMO42","family","Sample customer C","0770000003",7,isoDay(-2),windows[2],true)
+  ],tickets:[],outbox:[],prefs:{}};
+}
+function readState(){
+  try {const saved=JSON.parse(localStorage.getItem(storeKey));if(Array.isArray(saved?.orders)&&Array.isArray(saved?.tickets)&&Array.isArray(saved?.outbox)&&saved.prefs) return saved;}
+  catch(error) {console.warn("Using a fresh demo session.",error);}
+  return seed();
+}
+let state=readState();
+let toastTimer;
+function say(message){
+  const toast=$("#toast");
+  clearTimeout(toastTimer);
+  toast.textContent=message;
+  toast.hidden=false;
+  toastTimer=setTimeout(()=>{toast.hidden=true},3600);
+}
+function save(){
+  try{localStorage.setItem(storeKey,JSON.stringify(state));}
+  catch(error){say("Browser storage is unavailable. This session will reset on reload.");}
+}
+function preferred(){
+  for(const setting of ["compact","still"]){
+    $("#"+setting).checked=Boolean(state.prefs[setting]);
+    document.body.classList.toggle(setting,Boolean(state.prefs[setting]));
+  }
+}
+window.addEventListener("storage",event=>{
+  if(event.key!==storeKey)return;
+  state=readState();
+  const focused=document.activeElement;
+  if(!dialog.open && !focused?.closest("form")) render(false);
+});
+function option(value,label=value,selected=false){return `<option value="${clean(value)}"${selected?" selected":""}>${clean(label)}</option>`;}
+function opts(values,selected){return values.map(value=>option(value,value,value===selected)).join("");}
+function screen(title,description,body){
+  app.innerHTML=`<header class="app-heading"><a class="textbtn" style="justify-self:start" href="#home">← Home</a><h1 tabindex="-1">${title}</h1><p>${description}</p></header>${body}`;
+}
+function status(order){return `<span class="pill ${order.cancelled?"bad":order.phase===7?"good":""}">${phaseFor(order)}</span>`;}
+function showError(form,message){
+  const feedback=$(".feedback",form);
+  if(feedback)feedback.textContent=message;
+  else say(message);
+}
+function record(order,message){
+  state.outbox.unshift({orderId:order.id,channel:order.channel,message,at:new Date().toISOString()});
+}
+function packageCards(){
+  $("#packageCards").innerHTML=Object.entries(packs).map(([key,pack])=>`<article class="panel plan ${key==="standard"?"featured":""}">
+    <h3>${pack.name}</h3><p>${pack.copy}</p><span class="price">${money(pack.price)}</span>
+    <ul><li>Up to ${pack.kg} kg · wash, dry and fold</li><li>${pack.detail}</li></ul>
+    <button class="btn ${key==="standard"?"lime":""}" data-action="choose" data-id="${key}">Choose ${pack.name}</button></article>`).join("");
+}
+let draft;
+let step=0;
+let activeOrderId="";
+let supportPreset={};
+let staffTab="orders";
+let filter={q:"",status:""};
+function newDraft(pack="standard"){
+  draft={pack,iron:0,dry:"",date:today(),slot:"",zone:zones[0],name:"",phone:"",address:"",notes:"",payment:"cash",channel:"SMS"};
+  step=0;
+}
+newDraft();
+function startBooking(pack){
+  newDraft(pack);
+  if(location.hash==="#book")render(true);
+  else location.hash="book";
+}
+function reviewRows(record){
+  const pack=packFor(record);
+  return `<dl class="kv">
+    <div><dt>${pack.name} · ${pack.kg} kg</dt><dd>${money(pack.price)}</dd></div>
+    ${record.iron?`<div><dt>Ironing estimate · ${record.iron} item(s)</dt><dd>${money(record.iron*80)}</dd></div>`:""}
+    ${record.quote!=null?`<div><dt>Accepted dry cleaning quote</dt><dd>${money(record.quote)}</dd></div>`:record.dry?'<div><dt>Dry cleaning</dt><dd>Quote pending</dd></div>':""}
+    <div class="total"><dt>Estimated total</dt><dd>${money(currencyTotal(record))}</dd></div></dl>`;
+}
+function serviceStep(){
+  return `<fieldset><legend tabindex="-1">Choose your service</legend><div class="choices">${Object.entries(packs).map(([key,pack])=>`<label class="choice"><input type="radio" name="pack" value="${key}" ${draft.pack===key?"checked":""}><span>${pack.name}<small>${money(pack.price)} · Up to ${pack.kg} kg · ${pack.detail}</small></span></label>`).join("")}</div></fieldset>
+  <fieldset class="fields"><label>Items for ironing<input name="iron" type="number" min="0" max="100" step="1" value="${draft.iron}"></label><label>Dry cleaning quote request<input name="dry" maxlength="160" placeholder="Optional · e.g. 1 suit" value="${clean(draft.dry)}"></label></fieldset>`;
+}
+function pickupStep(){
+  return `<fieldset><legend tabindex="-1">Schedule your pickup</legend><div class="fields">
+    <label>Pickup date<input type="date" name="date" min="${today()}" max="${isoDay(45)}" value="${clean(draft.date)}" required></label>
+    <label>Pickup window<select name="slot" required>${option("","Choose a window")}${opts(windows,draft.slot)}</select></label>
+    <label>Pickup zone<select name="zone" required>${opts(zones,draft.zone)}</select></label>
+    <label>Sample name<input name="name" required maxlength="70" autocomplete="off" value="${clean(draft.name)}"></label>
+    <label>Sample mobile number<input name="phone" required type="tel" inputmode="tel" maxlength="20" autocomplete="off" value="${clean(draft.phone)}" placeholder="0770000000"></label>
+    <label>Sample pickup address<input name="address" required maxlength="160" autocomplete="off" value="${clean(draft.address)}"></label>
+    <label class="full">Pickup instructions<textarea name="notes" rows="2" maxlength="240" placeholder="Optional · access instructions">${clean(draft.notes)}</textarea></label>
+  </div></fieldset><button type="button" class="textbtn" data-action="fill-example" style="justify-self:start">Fill sample details</button>`;
+}
+function paymentStep(){
+  return `<fieldset><legend tabindex="-1">Review and confirm</legend>
+  <p style="margin-bottom:13px">${clean(draft.name)} · ${clean(draft.address)} · ${niceDate(draft.date)}, ${clean(draft.slot)}</p>
+  ${draft.zone===zones[1]?'<p class="notice" style="margin-bottom:13px">Coverage review is required before staff can schedule this demo pickup.</p>':""}
+  <div class="fields"><label>Payment method<select name="payment">${option("cash","Cash on delivery",draft.payment==="cash")}${option("online","Online payment (simulation)",draft.payment==="online")}</select></label>
+  <label>Preferred status updates<select name="channel">${opts(channels,draft.channel)}</select></label></div></fieldset>`;
+}
+function booking(){
+  const stages=["Service","Pickup","Review"];
+  screen("Book a pickup","Try the full booking flow with sample contact and address details.",`<div class="book-grid">
+    <div class="panel"><ol class="steps" aria-label="Booking progress">${stages.map((stage,index)=>`<li ${index===step?'aria-current="step"':""}>${index+1}. ${stage}</li>`).join("")}</ol>
+    <form id="bookForm" class="fieldsets">${[serviceStep,pickupStep,paymentStep][step]()}
+    <p class="feedback" role="alert"></p><div class="actions">${step?`<button type="button" class="btn alt" data-action="back">Back</button>`:'<a class="btn alt" href="#packages">See packages</a>'}<button class="btn" type="submit">${step===2?"Confirm demo booking":"Continue →"}</button></div></form></div>
+    <aside class="panel stack receipt" aria-label="Order estimate"><h2>Order estimate</h2><div id="bookingEstimate">${reviewRows(draft)}</div><p class="notice">Pilot demo. Bookings and payment simulations are stored in this browser. Use sample details.</p></aside></div>`);
+}
+function capture(form){
+  const changes=Object.fromEntries(new FormData(form));
+  for(const [key,value] of Object.entries(changes))draft[key]=key==="iron"?Math.max(0,Math.min(100,Math.floor(Number(value)||0))):value.trim();
+}
+function orderTimeline(order){
+  return `<ol class="timeline">${phases.map((name,index)=>{
+    const event=order.events.find(item=>item.step===index);
+    return `<li ${index<=order.phase?'class="done"':""} ${index===order.phase&&!order.cancelled?'aria-current="step"':""}>${name}${event?` <small>· ${dateTime(event.at)}</small>`:""}</li>`;
+  }).join("")}</ol>`;
+}
+function orderCard(order){
+  const tickets=orderItems(order);
+  return `<div class="split"><article class="panel stack"><div class="row between"><h2>${order.id}</h2>${status(order)}</div>
+    <p>${packFor(order).name} · ${niceDate(order.date)}, ${clean(order.slot)}</p>
+    ${order.zone===zones[1]&&!order.coverageApproved?'<p class="notice">Pickup coverage is awaiting staff review.</p>':""}
+    ${order.weight?`<p>Recorded load: ${order.weight} kg</p>`:""}${order.assigned?`<p>Driver: ${clean(order.assigned)}</p>`:""}
+    ${reviewRows(order)}<p><strong>${paymentLabel(order)}</strong></p>
+    ${tickets.map(ticket=>`<div class="notice">${ticket.status==="Quoted"?`Dry cleaning quote: ${money(ticket.amount)} <button class="textbtn" data-action="accept-quote" data-id="${ticket.id}">Accept quote</button> <button class="textbtn" data-action="decline-quote" data-id="${ticket.id}">Decline</button>`:`Dry cleaning request · ${clean(ticket.status)}`}</div>`).join("")}
+    <div class="row"><button class="btn alt small" data-action="copy" data-id="${order.id}">Copy order ID</button>
+    ${!order.cancelled&&order.payment==="online"&&!order.paid?`<button class="btn small" data-action="pay" data-id="${order.id}">Simulate payment</button>`:""}
+    ${order.mine&&!order.cancelled&&order.phase<2?`<button class="textbtn" data-action="cancel" data-id="${order.id}">Cancel pickup</button>`:""}
+    <a class="textbtn" href="#support/${order.id}">Get order help</a></div></article><article class="panel stack"><h2>Order progress</h2>${orderTimeline(order)}</article></div>`;
+}
+function track(){
+  const order=findOrder(activeOrderId);
+  screen("Track your order","Enter the order ID from your booking confirmation.",`<div class="stack"><form id="trackForm" class="panel fields">
+    <label>Order ID<input name="id" required value="${clean(activeOrderId)}" placeholder="SLP-DEMO24"></label><div class="row" style="align-self:end"><button class="btn" type="submit">Track order</button><button class="textbtn" type="button" data-action="demo-track">Try SLP-DEMO24</button></div>
+    ${activeOrderId&&!order?'<p class="feedback full" role="alert">Order not found in this browser. Check the ID or try the sample order.</p>':""}</form>${order?orderCard(order):""}</div>`);
+}
+function history(){
+  const orders=state.orders.filter(order=>order.mine);
+  screen("My orders","View bookings saved by this browser, check payment status or book the same pack again.",orders.length?`<div class="panel">${ordersTable(orders,false)}</div>`:`<div class="panel stack"><h2>No bookings yet</h2><p>Once you confirm a pickup, it will appear here.</p><div><a class="btn" href="#book">Book a pickup</a></div></div>`);
+}
+function support(ref){
+  const order=findOrder(ref||"");
+  const ownTickets=state.tickets.filter(ticket=>ticket.mine);
+  screen("Support &amp; enquiries","Ask about your laundry, service coverage, recurring pickups or business laundry.",`<div class="split">
+    <form class="panel stack" id="supportForm"><h2>Send a demo request</h2><div class="fields">
+    <label>Topic<select name="type" required>${opts(topics,supportPreset.type|| (order?"Order help":"Service area"))}</select></label>
+    <label>Order ID <small>Optional for general enquiries</small><input name="orderId" maxlength="24" value="${order?.id??""}" placeholder="SLP-…"></label>
+    <label>Sample name<input name="name" required maxlength="70" value="${order?.mine?clean(order.name):""}"></label>
+    <label>Sample mobile<input name="phone" inputmode="tel" required type="tel" maxlength="20" value="${order?.mine?clean(order.phone):""}" placeholder="0770000000"></label>
+    <label class="full">Message<textarea name="message" required maxlength="500" rows="4"></textarea></label></div>
+    <p class="feedback" role="alert"></p><div><button class="btn" type="submit">Submit request</button></div></form>
+    <article class="panel stack"><h2>My requests</h2>${ownTickets.length?ownTickets.map(ticket=>`<p><strong>${ticket.id} · ${clean(ticket.type)}</strong><br>${clean(ticket.status)}${ticket.reply?` · ${clean(ticket.reply)}`:""}</p>`).join(""):"<p>Your requests will appear here and in the staff workspace.</p>"}</article></div>`);
+}
+function ordersTable(orders,staffMode=true){
+  if(!orders.length)return "<p>No matching orders.</p>";
+  return `<div class="table-wrap" tabindex="0" role="region" aria-label="Orders"><table>
+  <thead><tr><th scope="col">Order</th>${staffMode?'<th scope="col">Customer</th>':""}<th scope="col">Package</th><th scope="col">Pickup</th><th scope="col">Status</th><th scope="col">Total</th><th scope="col">Actions</th></tr></thead>
+  <tbody>${orders.map(order=>`<tr><td>${order.id}</td>${staffMode?`<td>${clean(order.name)}</td>`:""}<td>${packFor(order).name}</td><td>${niceDate(order.date)}<br><small>${clean(order.slot)}</small></td><td>${status(order)}</td><td>${money(currencyTotal(order))}</td>
+    <td><div class="row">${staffMode?`<button class="btn alt small" data-action="open-order" data-id="${order.id}">Manage</button>`:`<a class="btn alt small" href="#track/${order.id}">Track</a><button class="textbtn" data-action="choose" data-id="${order.pack}">Book again</button>`}</div></td></tr>`).join("")}</tbody></table></div>`;
+}
+function ordersForStaff(){
+  const query=filter.q.trim().toLowerCase();
+  const matched=state.orders.filter(order=>(!filter.status||phaseFor(order)===filter.status)&&(!query||[order.id,order.name,order.phone,order.zone].some(value=>value.toLowerCase().includes(query))));
+  return ordersTable(matched);
+}
+function dispatch(){
+  const orders=state.orders.filter(order=>!order.cancelled&&order.phase<7).sort((a,b)=>(a.date+a.slot).localeCompare(b.date+b.slot));
+  return `<div class="panel stack"><h2>Pickup and return run sheet</h2><p>Scheduled pickups appear alongside orders being returned. Select an order to assign a driver or update its status.</p>
+  ${orders.length?`<div class="table-wrap" tabindex="0" role="region" aria-label="Dispatch run sheet"><table><thead><tr><th>Order</th><th>Task / target</th><th>Zone / address</th><th>Driver</th><th>Action</th></tr></thead>
+  <tbody>${orders.map(order=>`<tr><td>${order.id}</td><td>${order.phase>=5?order.phase===5?"Return · ready to dispatch":"Return · in transit":order.phase>=2?"At laundry facility":`Pickup · ${niceDate(order.date)} ${clean(order.slot)}`}</td>
+  <td>${clean(order.zone)}<br><small>${clean(order.address)}</small></td><td>${clean(order.assigned||"Unassigned")}</td><td><button class="btn alt small" data-action="open-order" data-id="${order.id}">Manage</button></td></tr>`).join("")}</tbody></table></div>`:"<p>No open dispatch tasks.</p>"}</div>`;
+}
+function customers(){
+  const groups=new Map();
+  for(const order of state.orders){
+    const key=order.phone.replace(/\D/g,"").replace(/^94/,"0");
+    if(!groups.has(key))groups.set(key,{name:order.name,phone:order.phone,count:0,paid:0});
+    const row=groups.get(key);
+    row.count++;
+    if(order.paid&&!order.cancelled)row.paid+=currencyTotal(order);
+  }
+  return `<div class="panel stack"><h2>Customer records</h2><p>Records are grouped by sample mobile number.</p><div class="table-wrap" tabindex="0" role="region" aria-label="Customer records"><table><thead><tr><th>Customer</th><th>Mobile</th><th>Orders</th><th>Recorded payments</th></tr></thead>
+  <tbody>${[...groups.values()].map(row=>`<tr><td>${clean(row.name)}</td><td>${clean(row.phone)}</td><td>${row.count}</td><td>${money(row.paid)}</td></tr>`).join("")}</tbody></table></div></div>`;
+}
+function requests(){
+  return `<div class="panel stack"><h2>Support requests &amp; quotes</h2>
+  ${state.tickets.length?state.tickets.map(ticket=>`<article class="panel stack"><div class="row between"><strong>${ticket.id} · ${clean(ticket.type)}</strong><span class="pill">${clean(ticket.status)}</span></div>
+    <p>${clean(ticket.name)} · ${clean(ticket.phone)} ${ticket.orderId?`· ${clean(ticket.orderId)}`:""}<br>${clean(ticket.message)}</p>
+    <form data-kind="ticket" data-id="${ticket.id}" class="fields">
+    ${ticket.type==="Dry cleaning quote"&&ticket.orderId&&["Open","Quoted"].includes(ticket.status)?`<label>Quote amount (LKR)<input type="number" name="amount" min="1" max="100000" step="1" value="${ticket.amount??""}" placeholder="Optional"></label>`:""}
+    <label>Staff reply<input name="reply" maxlength="240" value="${clean(ticket.reply||"")}"></label>
+    <label>Status<select name="status">${opts(["Open",...(ticket.type==="Dry cleaning quote"&&ticket.orderId&&["Open","Quoted"].includes(ticket.status)?["Quoted"]:[]),...(["Accepted","Declined"].includes(ticket.status)?[ticket.status]:[]),"Resolved"],ticket.status)}</select></label>
+    <div class="full row"><button type="submit" class="btn small">Save response</button><p role="alert" class="feedback"></p></div></form></article>`).join(""):"<p>New support and quotation requests will appear here.</p>"}</div>`;
+}
+function messages(){
+  return `<div class="panel stack"><h2>Notification log</h2><p>Simulated SMS and WhatsApp messages appear here when bookings and status updates are recorded.</p>
+  ${state.outbox.length?`<div class="table-wrap" tabindex="0" role="region" aria-label="Notification log"><table><thead><tr><th>Order</th><th>Channel</th><th>Message</th><th>Recorded</th></tr></thead>
+  <tbody>${state.outbox.map(item=>`<tr><td>${item.orderId}</td><td>${clean(item.channel)}</td><td>${clean(item.message)}</td><td>${dateTime(item.at)}</td></tr>`).join("")}</tbody></table></div>`:"<p>No notifications recorded yet.</p>"}</div>`;
+}
+function planReport(){
+  const forecast=[[2394000,390688],[3112200,739817],[3890250,1124557]];
+  return `<div class="split"><article class="panel stack"><h2>Business plan forecast</h2><p>LKR 2,500,000 startup funding · LKR 1,800,000 owner equity · LKR 700,000 proposed loan.</p>
+  <div class="bars">${forecast.map(([sales,profit],index)=>`<div><div class="row between"><strong>Year ${index+1}</strong><span>${money(sales)} sales</span></div><div class="bar" aria-hidden="true"><span style="width:${100*sales/forecast[2][0]}%"></span></div><small>${money(profit)} projected net profit</small></div>`).join("")}</div><p class="notice">Figures are planning estimates from the IT4050 business plan.</p></article>
+  <article class="panel stack"><h2>Pilot &amp; growth plan</h2><dl class="kv">
+  <div><dt>Customer interviews</dt><dd>20+</dd></div><div><dt>Pilot orders</dt><dd>30–50</dd></div><div><dt>Regular turnaround target</dt><dd>24–48 h</dd></div>
+  <div><dt>First market</dt><dd>Colombo and nearby suburbs</dd></div></dl><p>Future offerings include weekly and monthly subscriptions, business laundry contracts, expanded service areas and Sinhala, Tamil and English customer communication.</p><div class="row"><button class="btn small" data-action="export">Export orders as CSV</button></div></article></div>`;
+}
+function staff(){
+  const tabs={orders:"Orders",dispatch:"Dispatch",customers:"Customers",requests:"Support & quotes",messages:"Notifications",plan:"Business plan"};
+  const paid=state.orders.filter(order=>order.paid&&!order.cancelled);
+  const metrics=[["Active orders",state.orders.filter(order=>!order.cancelled&&order.phase<7).length],["Delivered",state.orders.filter(order=>!order.cancelled&&order.phase===7).length],["Open requests",state.tickets.filter(ticket=>["Open","Quoted"].includes(ticket.status)).length],["Recorded payments",money(paid.reduce((sum,order)=>sum+currencyTotal(order),0))]];
+  let content;
+  if(staffTab==="orders")content=`<div class="panel stack"><h2>Order queue</h2><form class="fields" id="staffFilter"><label>Search orders<input name="q" type="search" value="${clean(filter.q)}" placeholder="Order ID, customer, mobile or zone"></label><label>Status<select name="status">${option("","All statuses")}${opts([...phases,"Cancelled"],filter.status)}</select></label></form><div id="staffOrders">${ordersForStaff()}</div></div>`;
+  else content=({dispatch,customers,requests,messages,plan:planReport}[staffTab])();
+  screen("Staff workspace","Manage pickups, laundry processing, deliveries, payment records and customer requests.",`<div class="stack">
+  <p class="notice">Demo staff access. Use sample data. Changes appear immediately in this browser’s customer tracker.</p>
+  <div class="metrics">${metrics.map(([name,value])=>`<article class="panel metric"><span class="muted">${name}</span><strong>${value}</strong></article>`).join("")}</div>
+  <div><nav class="tabs" aria-label="Staff workspace sections">${Object.entries(tabs).map(([key,label])=>`<button class="btn alt small" data-action="tab" data-id="${key}" aria-pressed="${staffTab===key}">${label}</button>`).join("")}</nav>${content}</div></div>`);
+}
+function showOrder(order){
+  if(!order)return;
+  const pack=packFor(order);
+  const next=phases[order.phase+1];
+  $("#dialogTitle").textContent=order.id;
+  $("#dialogContent").innerHTML=`<div class="row between"><strong>${clean(order.name)} · ${pack.name}</strong>${status(order)}</div>
+    <p>${clean(order.phone)} · ${niceDate(order.date)} · ${clean(order.slot)}<br>${clean(order.address)} · ${clean(order.zone)}${order.notes?`<br>Pickup notes: ${clean(order.notes)}`:""}</p>
+    ${order.weight>pack.kg?`<p class="notice">This bag exceeds the selected pack limit of ${pack.kg} kg. Confirm a suitable pack with the customer before processing.</p>`:""}
+    <div class="print-label"><strong>Smart Laundry Pickup · Bag label</strong><br><strong style="font-size:24px;letter-spacing:.06em">${labelFor(order)}</strong><br>${pack.name} · ${niceDate(order.date)} · ${order.weight?order.weight+" kg":"Weight pending"}<br>Sort by fabric, colour and care instructions.</div>
+    <form data-kind="manage" data-id="${order.id}" class="fields">
+    <label>Driver / route assignee<input name="assigned" maxlength="70" value="${clean(order.assigned)}"></label>
+    <label>Intake weight (kg)<input name="weight" type="number" min="0" max="100" step=".1" value="${order.weight||""}" placeholder="Record at collection"></label>
+    <label class="choice"><input type="checkbox" name="checked" ${order.checked?"checked":""}><span>Quality check complete</span></label>
+    ${order.zone===zones[1]?`<label class="choice"><input type="checkbox" name="coverageApproved" ${order.coverageApproved?"checked":""}><span>Approve demo coverage</span></label>`:""}
+    <p class="feedback full" role="alert"></p>
+    <div class="row full"><button class="btn alt small" type="submit" value="save">Save details</button>
+    ${!order.cancelled&&next?`<button class="btn small" type="submit" value="advance">Mark ${next.toLowerCase()}</button>`:""}
+    <button class="btn alt small" type="button" data-action="print-label">Print bag label</button>
+    ${!order.cancelled&&order.payment==="cash"&&!order.paid&&order.phase>=6?`<button class="btn alt small" type="button" data-action="cash" data-id="${order.id}">Record cash received</button>`:""}
+    </div></form><p><strong>${paymentLabel(order)}</strong> · ${money(currencyTotal(order))}</p>`;
+  if(!dialog.open)dialog.showModal();
+}
+function submitOrder(form,event){
+  const order=findOrder(form.dataset.id);
+  const data=new FormData(form);
+  const weight=Number(data.get("weight"))||0;
+  const checked=data.has("checked");
+  const approved=data.has("coverageApproved");
+  const assigned=String(data.get("assigned")||"").trim();
+  const advance=event.submitter?.value==="advance";
+  const next=order.phase+1;
+  if(order.phase>=5&&!checked)return showError(form,"This order has passed quality control. Keep the quality check recorded.");
+  if(advance&&next===1&&order.zone===zones[1]&&!approved)return showError(form,"Approve the demo coverage before scheduling.");
+  if(advance&&[1,6].includes(next)&&!assigned)return showError(form,"Assign a driver before this status change.");
+  if(advance&&next===2&&!weight)return showError(form,"Enter the recorded bag weight before marking the order collected.");
+  if(advance&&next===5&&!checked)return showError(form,"Complete the quality check before packing.");
+  Object.assign(order,{assigned,weight,checked,coverageApproved:approved});
+  if(advance&&next<phases.length&&!order.cancelled){
+    order.phase=next;
+    order.events.push({step:next,at:new Date().toISOString()});
+    record(order,order.id+" · "+phaseFor(order));
+  }
+  save();
+  render(false);
+  showOrder(order);
+  say(advance?"Order status updated.":"Order details saved.");
+}
+function submitTicket(form){
+  const ticket=state.tickets.find(item=>item.id===form.dataset.id);
+  const data=new FormData(form);
+  const ticketStatus=data.get("status");
+  const amount=Number(data.get("amount"));
+  const order=findOrder(ticket.orderId||"");
+  if(ticketStatus==="Quoted"&&(!order||order.cancelled||order.paid||order.phase>=6||!amount))return showError(form,"An open, unpaid order and a valid quote amount are required.");
+  ticket.status=ticketStatus;
+  ticket.reply=String(data.get("reply")||"").trim();
+  if(ticketStatus==="Quoted")ticket.amount=amount;
+  if(order)record(order,order.id+" · "+ticket.type+" "+ticketStatus.toLowerCase()+".");
+  save();
+  render(false);
+  say("Request updated.");
+}
+function render(move=true){
+  const [route,rawId=""]=location.hash.slice(1).split("/");
+  const home=new Set(["","home","packages","process","coverage","main"]);
+  $("#mobileMenu").hidden=true;
+  $("#menuButton").setAttribute("aria-expanded","false");
+  $("#homeView").hidden=!home.has(route);
+  app.hidden=home.has(route);
+  $("#mobileActions").hidden=route==="staff"||route==="book";
+  if(home.has(route)){
+    if(move&&["packages","process","coverage","main"].includes(route))requestAnimationFrame(()=>document.getElementById(route)?.scrollIntoView());
+    else if(move)window.scrollTo(0,0);
+    return;
+  }
+  if(route==="book")booking();
+  else if(route==="track"){activeOrderId=rawId;track();}
+  else if(route==="history")history();
+  else if(route==="support")support(rawId);
+  else if(route==="staff")staff();
+  else {location.hash="home";return;}
+  if(move){window.scrollTo(0,0);$("h1",app)?.focus({preventScroll:true});}
+}
+function completeBooking(){
+  const id=code("SLP");
+  const at=new Date().toISOString();
+  const order={...draft,id,phase:0,created:at,paid:false,mine:true,weight:0,assigned:"",checked:false,events:[{step:0,at}]};
+  state.orders.unshift(order);
+  if(draft.dry) state.tickets.unshift({id:code("REQ"),orderId:id,type:"Dry cleaning quote",name:draft.name,phone:draft.phone,message:draft.dry,status:"Open",mine:true});
+  record(order,"Booking recorded for "+niceDate(order.date)+", "+order.slot+". Reference "+id+".");
+  save();
+  newDraft();
+  location.hash="track/"+id;
+  say("Booking confirmed. Your order ID is "+id+".");
+}
+document.addEventListener("submit",event=>{
+  const form=event.target;
+  event.preventDefault();
+  if(form.id==="quickForm")return startBooking($("#quickPack").value);
+  if(form.id==="trackForm"){
+    const ref=normalId(String(new FormData(form).get("id")||""));
+    if(!/^[A-Z0-9-]{1,24}$/.test(ref))return say("Use the letters and digits from an order ID.");
+    location.hash="track/"+ref;
+    return;
+  }
+  if(form.id==="bookForm"){
+    capture(form);
+    if(step===1&&(!draft.name||!draft.address||draft.phone.replace(/\D/g,"").length<9))return showError(form,"Enter a sample name, address and valid mobile number.");
+    if(step===1&&draft.date<today())return showError(form,"Choose today or a future date.");
+    if(step===2)return completeBooking();
+    step++;
+    booking();
+    $("legend",app)?.focus();
+    return;
+  }
+  if(form.id==="supportForm"){
+    const data=Object.fromEntries([...new FormData(form)].map(([key,value])=>[key,value.trim()]));
+    data.orderId=normalId(data.orderId);
+    if(!data.name||!data.message||data.phone.replace(/\D/g,"").length<9)return showError(form,"Enter a sample name, mobile number and message.");
+    if(data.orderId&&!findOrder(data.orderId))return showError(form,"That order ID could not be found.");
+    if(data.type==="Dry cleaning quote"&&data.orderId&&orderItems(findOrder(data.orderId)).some(ticket=>["Open","Quoted","Accepted"].includes(ticket.status)))return showError(form,"This order already has an active dry cleaning request.");
+    state.tickets.unshift({...data,id:code("REQ"),status:"Open",mine:true});
+    save();
+    supportPreset={};
+    render(false);
+    say("Request recorded in the demo staff workspace.");
+  }
+  if(form.dataset.kind==="manage")submitOrder(form,event);
+  if(form.dataset.kind==="ticket")submitTicket(form);
+});
+document.addEventListener("input",event=>{
+  const input=event.target;
+  if(input.form?.id==="bookForm"){
+    capture(input.form);
+    $("#bookingEstimate").innerHTML=reviewRows(draft);
+  }
+  if(input.form?.id==="staffFilter"){
+    filter[input.name]=input.value;
+    $("#staffOrders").innerHTML=ordersForStaff();
+  }
+});
+document.addEventListener("change",event=>{
+  const input=event.target;
+  if(["compact","still"].includes(input.id)){
+    state.prefs[input.id]=input.checked;
+    preferred();
+    save();
+  }
+});
+function exportOrders(){
+  const rows=[["Order ID","Package","Pickup date","Pickup window","Status","Payment","Total LKR"],...state.orders.map(order=>[order.id,packFor(order).name,order.date,order.slot,phaseFor(order),paymentLabel(order),currencyTotal(order)])];
+  const csv=rows.map(row=>row.map(cell=>'"'+String(cell).replaceAll('"','""')+'"').join(",")).join("\r\n");
+  const url=URL.createObjectURL(new Blob([csv],{type:"text/csv;charset=utf-8"}));
+  const link=document.createElement("a");
+  link.href=url;link.download="smart-laundry-orders.csv";link.click();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+  say("Order report exported.");
+}
+document.addEventListener("click",async event=>{
+  const button=event.target.closest("[data-action]");
+  if(!button)return;
+  const {action,id}=button.dataset;
+  if(action==="choose")return startBooking(id);
+  if(action==="demo-track"){location.hash="track/SLP-DEMO24";return;}
+  if(action==="back"){
+    capture($("#bookForm"));
+    step--;booking();$("legend",app)?.focus();return;
+  }
+  if(action==="fill-example"){
+    Object.assign(draft,{name:"Sample Customer",phone:"0770000000",address:"Sample apartment, Colombo",slot:windows[0],date:isoDay(1)});
+    booking();$('[name="name"]',app)?.focus();return;
+  }
+  if(action==="tab"){staffTab=id;staff();$('[data-action="tab"][aria-pressed="true"]',app)?.focus();return;}
+  if(action==="close-dialog"){dialog.close();return;}
+  if(action==="print-label"){window.print();return;}
+  if(action==="export"){exportOrders();return;}
+  if(action==="accept-quote"||action==="decline-quote"){
+    const ticket=state.tickets.find(item=>item.id===id);
+    const order=findOrder(ticket?.orderId||"");
+    if(!order||ticket.status!=="Quoted"||order.cancelled||order.paid||order.phase>=6)return say("This quote is no longer available.");
+    const accept=action==="accept-quote";
+    ticket.status=accept?"Accepted":"Declined";
+    if(accept)order.quote=ticket.amount;
+    record(order,order.id+" · Dry cleaning quote "+ticket.status.toLowerCase()+".");
+    save();render(false);say(accept?"Quote accepted. Order total updated.":"Quote declined.");return;
+  }
+  const order=findOrder(id||"");
+  if(!order)return;
+  if(action==="open-order"){showOrder(order);return;}
+  if(action==="copy"){
+    try{await navigator.clipboard.writeText(order.id);say("Order ID copied.");}
+    catch{say("Order ID: "+order.id);}
+    return;
+  }
+  if(action==="cancel"&&!order.cancelled&&order.mine&&order.phase<2){
+    if(order.paid)return say("Submit an order-help request to review a paid booking.");
+    if(!window.confirm("Cancel this demo pickup?"))return;
+    order.cancelled=true;
+    record(order,order.id+" · Pickup cancelled.");
+    save();render(false);say("Pickup cancelled.");return;
+  }
+  if(action==="pay"||action==="cash"){
+    if(order.cancelled||order.paid)return;
+    if(orderItems(order).some(ticket=>["Open","Quoted"].includes(ticket.status)))return say("Resolve or decline the open quote before collecting payment.");
+    if(!window.confirm("Record a simulated payment of "+money(currencyTotal(order))+"?"))return;
+    order.paid=true;
+    record(order,order.id+" · Demo payment recorded.");
+    save();render(false);
+    if(dialog.open)showOrder(order);
+    say("Demo payment recorded.");
+  }
+});
+$("#menuButton").addEventListener("click",()=>{
+  const menu=$("#mobileMenu");
+  menu.hidden=!menu.hidden;
+  $("#menuButton").setAttribute("aria-expanded",String(!menu.hidden));
+});
+$("#mobileMenu").addEventListener("click",event=>{
+  if(event.target.closest("a")){$("#mobileMenu").hidden=true;$("#menuButton").setAttribute("aria-expanded","false");}
+});
+window.addEventListener("hashchange",()=>render());
+preferred();
+packageCards();
+render(Boolean(location.hash));
+</script>
+</body>
+</html>
